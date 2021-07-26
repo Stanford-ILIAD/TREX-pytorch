@@ -35,7 +35,7 @@ parser.add_argument('--traj_len', type=int, help='the length of the partial traj
 args = parser.parse_args()
 
 if not os.path.exists(args.output_model_path):
-    os.system('mkdir -p '+args.output_model_path)
+    os.system('mkdir -p '+'/'.join(args.output_model_path.split('/')[:-1]))
 
 if torch.cuda.is_available():
     use_gpu = True
