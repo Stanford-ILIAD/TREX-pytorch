@@ -14,7 +14,11 @@ cd custom_envs
 pip install -e .
 `
 
+## Collecting Demonstrations
 
+To collect demonstrations, we use the reinforcement learning code [here](https://github.com/ikostrikov/pytorch-trpo) to learn an optimal policy.
+
+Then we use the checkpoints at different episode to collect demonstrations with different reward and then we can derive the ranking.
 
 
 ## Training
@@ -41,7 +45,7 @@ Each demonstration file is a pickle file of a dict `{'traj':[traj_1, traj_2, ...
 
 ## Testing
 
-To test the learned reward, we use the reinforcement learning code from [here](https://github.com/ikostrikov/pytorch-trpo).
+To test the learned reward, we use the reinforcement learning code modified from [here](https://github.com/ikostrikov/pytorch-trpo).
 
 `
 cd pytorch-trpo
